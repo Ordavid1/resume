@@ -281,7 +281,7 @@ const App: React.FC = () => {
     <motion.div 
         initial={{ opacity: 0, x: 50 }} 
         animate={{ opacity: 1, x: 0 }} 
-        className="h-full overflow-y-auto p-4 md:p-10 pb-24 md:pb-10 max-w-6xl mx-auto"
+        className="h-full overflow-y-auto p-4 md:p-10 pb-24 md:pb-10 max-w-6xl mx-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
     >
         <div className="flex items-center gap-4 mb-10">
             <div className="relative w-20 h-20 rounded-2xl overflow-hidden shadow-game border-2 border-white bg-game-peach">
@@ -372,7 +372,7 @@ const App: React.FC = () => {
                         </div>
                         <div className="flex flex-wrap gap-2">
                             {node.skills.map(s => (
-                                <span key={s} className="text-xs font-bold text-game-dim bg-game-bg px-3 py-1.5 rounded-lg">
+                                <span key={s} className="text-xs font-bold text-black bg-game-bg px-3 py-1.5 rounded-lg">
                                     {s}
                                 </span>
                             ))}
@@ -388,7 +388,7 @@ const App: React.FC = () => {
     <motion.div 
         initial={{ opacity: 0, x: 50 }} 
         animate={{ opacity: 1, x: 0 }} 
-        className="h-full overflow-y-auto p-4 md:p-10 pb-24 md:pb-10 max-w-5xl mx-auto"
+        className="h-full overflow-y-auto p-4 md:p-10 pb-24 md:pb-10 max-w-5xl mx-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
     >
         <div className="flex items-center gap-4 mb-12">
             <div className="bg-game-yellow p-3 rounded-2xl text-game-text shadow-game">
