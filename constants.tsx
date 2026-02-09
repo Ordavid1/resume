@@ -77,7 +77,7 @@ export const PROJECTS: Project[] = [
     id: 'postgen',
     title: 'AI Post Generator',
     description: 'Automated content creation tool for social media and blogs.',
-    url: 'https://aipostgenerator.dev',
+    url: 'https://aipostgenerator.marketing',
     tech: ['Content AI', 'Marketing Tech', 'Automation'],
     image: 'https://picsum.photos/600/400?random=4'
   },

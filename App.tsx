@@ -88,12 +88,27 @@ const App: React.FC = () => {
   const renderNav = () => (
     <nav className="fixed left-0 right-0 bottom-6 md:top-0 md:left-6 md:bottom-auto md:right-auto md:h-screen w-full md:w-24 flex md:flex-col items-center justify-center pointer-events-none z-50">
       <div className="pointer-events-auto bg-white/90 backdrop-blur-md border border-white/50 shadow-game rounded-full md:rounded-2xl p-2 md:py-8 flex md:flex-col gap-2 md:gap-6">
-        <div className="hidden md:flex flex-col items-center mb-4 text-game-peach">
-           <div className="w-10 h-10 bg-game-peach rounded-xl flex items-center justify-center text-white font-black text-xl shadow-[2px_2px_0px_0px_rgba(0,0,0,0.1)]">
-             OD
-           </div>
-        </div>
         
+        {/* OD Home Button */}
+        <motion.button
+          onClick={() => handleNav(ViewState.HUB)}
+          whileHover={{ scale: 1.1, rotate: 5 }}
+          whileTap={{ scale: 0.9 }}
+          className={`relative w-12 h-12 flex items-center justify-center rounded-full transition-all duration-300 font-black text-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.1)] ${
+            viewState === ViewState.HUB
+              ? 'bg-game-peach text-white shadow-[0_4px_0_0_#ff4757]' 
+              : 'bg-game-peach text-white hover:brightness-110'
+          }`}
+        >
+          OD
+          {viewState === ViewState.HUB && (
+            <motion.div 
+                layoutId="nav-dot"
+                className="absolute -right-1 -top-1 w-3 h-3 bg-game-yellow rounded-full border-2 border-white"
+            />
+          )}
+        </motion.button>
+
         {NAV_ITEMS.map((item) => {
             const isActive = viewState === item.id;
             // Override icon for visual consistency
@@ -105,7 +120,7 @@ const App: React.FC = () => {
                   onClick={() => handleNav(item.id as ViewState)}
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   whileTap={{ scale: 0.9 }}
-                  className={`relative p-3 rounded-xl transition-all duration-300 ${
+                  className={`relative p-3 rounded-full transition-all duration-300 ${
                     isActive 
                       ? 'bg-game-mint text-white shadow-[0_4px_0_0_#26a69a]' 
                       : 'text-game-dim hover:bg-game-bg hover:text-game-mint'
@@ -552,21 +567,6 @@ const App: React.FC = () => {
           {renderNav()}
           
           <main className="flex-1 h-full overflow-hidden relative md:pl-32">
-            {/* Header / Breadcrumbs */}
-            {viewState !== ViewState.HUB && (
-               <div className="absolute top-4 left-4 md:left-0 z-30">
-                   <button 
-                    onClick={() => handleNav(ViewState.HUB)}
-                    className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm text-game-dim font-bold hover:text-game-mint transition-colors"
-                   >
-                     <div className="w-6 h-6 bg-game-bg rounded-full flex items-center justify-center">
-                        <X size={14} />
-                     </div>
-                     <span>EXIT LEVEL</span>
-                   </button>
-               </div>
-            )}
-
             <div className="h-full relative z-10">
                 <AnimatePresence mode="wait">
                     {viewState === ViewState.HUB && (
