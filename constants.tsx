@@ -22,7 +22,7 @@ export const PERSONAL_INFO = {
     "Combining 7 years of GTM and BizDev skills with 4 years as a Generative AI product leader.",
     "I build AI infrastructures, design agentic workflows, build GTM and business roadmaps, and lead disruptive products from 0->1."
   ],
-  profileImage: "profile.jpg" // Image located in project root
+  profileImage: "/favicon/profile.jpg"
 };
 
 export const EDUCATION: Education[] = [
