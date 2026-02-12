@@ -17,12 +17,12 @@ export const PERSONAL_INFO = {
   email: "ordavidone@gmail.com",
   phone: "+972-526272842",
   linkedin: "linkedin.com/in/ordavid",
-  tagline: "Utilizing years of Business savviness into applied Generative AI products",
+  tagline: "Utilizing years of business savviness into applied Generative AI products",
   bio: [
     "Combining 7 years of GTM and BizDev skills with 4 years as a Generative AI product leader.",
     "I build AI infrastructures, design agentic workflows, build GTM and business roadmaps, and lead disruptive products from 0->1."
   ],
-  profileImage: "/favicon/profile.jpg"
+  profileImage: "/public/favicon/profile.jpg"
 };
 
 export const EDUCATION: Education[] = [
@@ -142,12 +142,12 @@ export const EXPERIENCE: Experience[] = [
   },
   {
     id: 'ey',
-    role: 'Advisory Team Lead',
+    role: 'Advisory Team Lead, Startups&VCs',
     company: 'Ernst & Young',
     period: '2017 - 2020',
     type: 'corporate',
     description: [
-      'Led client relationships within tech and investment sectors.',
+      'Led multi-national financial projects within tech sector',
       'Innovated new revenue streams resulting in 30% increase in engagement YOY.',
       'Optimized financial strategies for startups and VCs.'
     ]
